@@ -16,8 +16,6 @@
 </p>
 
 <p align="center">
-  <a href="#performance-highlights"><img alt="up to 780× over CPU baselines" src="https://img.shields.io/badge/wall--clock-up%20to%20780%C3%97%20vs%20SB3-blueviolet"></a>
-  <a href="#the-five-tasks"><img alt="5 CMDP tasks" src="https://img.shields.io/badge/tasks-5%20CMDPs-informational"></a>
   <a href="#algorithms--baselines"><img alt="PPO IPPO SAC PPO-Lagrangian Saute-PPO" src="https://img.shields.io/badge/algos-PPO%20%C2%B7%20IPPO%20%C2%B7%20SAC%20%C2%B7%20PPO--Lag%20%C2%B7%20Saut%C3%A9-blue"></a>
 </p>
 
