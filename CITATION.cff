@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use PowerZooJax, please cite the paper below."
+type: software
+title: "PowerZooJax"
+abstract: "A JAX-based power-system benchmark for reinforcement learning, with five constrained MDP tasks whose full training and evaluation loop runs on the GPU."
+authors:
+  - family-names: Pan
+    given-names: Zhanhua
+    affiliation: Nanyang Technological University
+  - family-names: Liu
+    given-names: Xiao
+    affiliation: Cornell University
+  - family-names: Cao
+    given-names: Zhilong
+    affiliation: Nanyang Technological University
+  - family-names: Wang
+    given-names: Jianhong
+    affiliation: University of Bristol
+  - family-names: Qiu
+    given-names: Dawei
+    affiliation: Nanyang Technological University
+repository-code: "https://github.com/PanZhanhua/PowerZooJax"
+url: "https://panzhanhua.github.io/PowerZooJax/"
+license: MIT
+preferred-citation:
+  type: article
+  title: "PowerZooJax: A JAX-based Power System Benchmark for Reinforcement Learning"
+  authors:
+    - family-names: Pan
+      given-names: Zhanhua
+      affiliation: Nanyang Technological University
+    - family-names: Liu
+      given-names: Xiao
+      affiliation: Cornell University
+    - family-names: Cao
+      given-names: Zhilong
+      affiliation: Nanyang Technological University
+    - family-names: Wang
+      given-names: Jianhong
+      affiliation: University of Bristol
+    - family-names: Qiu
+      given-names: Dawei
+      affiliation: Nanyang Technological University
+  journal: "arXiv preprint arXiv:2609.36052"
+  year: 2026
+  doi: "10.48550/arXiv.2609.36052"
+  url: "https://arxiv.org/abs/2609.36052"
