@@ -4,7 +4,8 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/2609.36052"><strong>Paper</strong></a> ·
-  <a href="https://panzhanhua.github.io/PowerZooJax/"><strong>Documentation</strong></a>
+  <a href="https://panzhanhua.github.io/PowerZooJax/"><strong>Documentation</strong></a> ·
+  <a href="https://github.com/PanZhanhua/PowerZooPy"><strong>Python version</strong></a>
 </p>
 
 <p align="center">
