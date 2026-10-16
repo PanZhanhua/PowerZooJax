@@ -1,6 +1,6 @@
 <h1 align="center">PowerZooJax</h1>
 
-<p align="center"><strong>A JAX-based power-system benchmark for reinforcement learning.</strong></p>
+<p align="center"><strong>Composable, GPU-accelerated power-system environments for reinforcement learning, built with JAX.</strong></p>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2609.36052"><strong>Paper</strong></a> ·
@@ -19,11 +19,11 @@
   <a href="#algorithms--baselines"><img alt="PPO IPPO SAC PPO-Lagrangian Saute-PPO" src="https://img.shields.io/badge/algos-PPO%20%C2%B7%20IPPO%20%C2%B7%20SAC%20%C2%B7%20PPO--Lag%20%C2%B7%20Saut%C3%A9-blue"></a>
 </p>
 
-<p align="center">
-  Official code release for the paper
-  <a href="https://arxiv.org/abs/2609.36052"><em>PowerZooJax: A JAX-based Power System Benchmark for Reinforcement Learning</em></a>.<br>
-  If you find the code or paper useful, please <a href="#citation">cite</a> it.
-</p>
+PowerZooJax is a modular JAX library for building reinforcement-learning environments for power system operation. Grid cases, physics solvers (DC/AC power flow and OPF, unit commitment, radial and three-phase distribution sweeps), market clearing, and device models (batteries, renewables, EVs, flexible loads, data centers) are pure-functional building blocks that compose into a single environment, so the whole training and evaluation loop stays on the GPU.
+
+On top of these blocks, PowerZooJax ships **five reference benchmark tasks**: generation, transmission, distribution, distributed energy resources, and a data-center microgrid. Each sits behind a common `TaskSpec` interface with explicit reward and safety-cost channels. Use them as ready-made benchmarks, or as templates for your own tasks: swap the grid case, attach different devices, or change the reward and constraints.
+
+Need a CPU implementation that plugs into Stable-Baselines3 or RLlib? See [PowerZooPy](https://github.com/PanZhanhua/PowerZooPy), an object-oriented Python implementation of the same tasks.
 
 <p align="center">
   <img src="docs/assets/images/physics/fig1_execution_paradigm.png" alt="PowerZooJax execution paradigm from physical CMDP tasks to JAX, GPU-batched environments, actor-learner updates, and T by B trajectories" width="860">
@@ -37,13 +37,11 @@
 
 ---
 
-## Abstract
+## Why PowerZooJax?
 
 Power system operation is a safety-critical sequential decision-making problem, making it a natural testbed for reinforcement learning. Existing RL environments for power systems are often narrow in scope and computationally limited by CPU-based simulation workflows, where each environment step calls a host-side power-flow or optimization solver and the policy trains on a separate device.
 
-**PowerZooJax** rewrites power flow, economic dispatch, market clearing, and device dynamics as JAX computation graphs, so the entire training and evaluation loop — environment reset, transition, reward, safety cost, action sampling, and gradient update — stays on the GPU. The suite ships **five constrained Markov decision process (CMDP) tasks** spanning generation, transmission, distribution, distributed energy resources, and a data-center microgrid, all behind a single `TaskSpec` interface with explicit `reward` and `costs` channels.
-
-Across the five tasks we observe **wall-clock speedups from 8× to 780×** over CPU-driven SB3 / SBX baselines on a single workstation GPU, while reporting a standardized set of returns, safety violations, and out-of-distribution stress metrics with 5 random seeds.
+PowerZooJax expresses power flow, economic dispatch, market clearing, and device dynamics as JAX computation graphs, so the entire loop — environment reset, transition, reward, safety cost, action sampling, and gradient update — runs on the GPU. On the five reference tasks we observe **wall-clock speedups from 8× to 780×** over CPU-driven SB3 / SBX baselines on a single workstation GPU, while reporting a standardized set of returns, safety violations, and out-of-distribution stress metrics over 5 random seeds.
 
 ## What you get
 
